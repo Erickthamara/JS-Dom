@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript for Everyone:DOM</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+        <h1>Asabeneh Yetayeh challenges in <span id="2020">2020</span></h1>
+        <h2>30DaysOfJavaScript Challenge</h2>
+        <h3></h3>
+        <ul>
+            <li>30DaysOfPython Challenge Done</li>
+            <li>30DaysOfJavaScript Challenge Ongoing</li>
+            <li>30DaysOfReact Challenge Coming</li>
+            <li>30DaysOfFullStack Challenge Coming</li>
+            <li>30DaysOfDataAnalysis Challenge Coming</li>
+            <li>30DaysOfReactNative Challenge Coming</li>
+            <li>30DaysOfMachineLearning Challenge Coming</li>
+        </ul>
+    </div>
+    <script>
+
+        const heading1=document.getElementById("2020");
+        
+        heading1.style.fontSize="45px";
+
+        
+        //this function changes the color by selecting a random one from the list
+        change=()=>{
+            var colorList=["blue","red","green","brown","orange"];
+            var random_number = Math.floor(Math.random() * colorList.length) + 0;
+            heading1.style.color=colorList[random_number];
+            
+        }
+        setInterval(change,1000);
+
+        const heading3=document.querySelector("h3");
+        heading3.textContent=new Date().toLocaleString();
+        //console.log(heading3.textContent);
+
+
+        //this function changes the background color by selecting a random one from the list
+        changeBackgroundColor=()=>{
+            var colorList=["blue","red","green","brown","orange"];
+            var random_number = Math.floor(Math.random() * colorList.length) + 0;
+            heading3.style.backgroundColor=colorList[random_number];
+        }
+        setInterval(changeBackgroundColor,1000);
+
+        //assigning the background color of text dependinf on the Challenge status
+
+        const listItems=document.querySelectorAll("li");
+        //console.log(listItems);
+
+        // create an array of the last word of each li item
+        const lastWordItem=[];
+        for ( var i=0; i<listItems.length; i++){
+
+            const liContent= listItems[i].textContent;
+            //console.log(liContent);
+
+            const lastWord=liContent.split(" ");
+            console.log(lastWord);
+
+            if (lastWord[lastWord.length -1]==="Done"){
+                //console.log("works");
+                listItems[i].style.backgroundColor="green";
+           
+            }else if(lastWord[lastWord.length -1]==="Ongoing"){
+                listItems[i].style.backgroundColor="yellow";
+
+            }else if(lastWord[lastWord.length -1]==="Coming"){
+                listItems[i].style.backgroundColor="red";
+            }
+
+
+            //lastWordItem.push(lastWord[lastWord.length -1]);
+        }
+
+        for (var i=0; i<lastWordItem.length; i++){
+            if (lastWordItem[i]==="Done"){
+                //code
+            }
+        }
+
+        console.log(lastWordItem);
+        
+    </script>
+  </body>
+</html>

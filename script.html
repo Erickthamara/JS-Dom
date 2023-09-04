@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Document Object Model</title>
+      
+    </head>
+    <body>
+
+     <h1 class='title' id='first-title'>First Title</h1>
+     <h1 class='title' id='second-title'>Second Title</h1>
+     <h1 class='title' id='third-title'>Third Title</h1>
+     <h1></h1>
+
+     <script >
+        /*
+        const title1=document.querySelectorAll(".title");
+
+
+        const title4=document.querySelectorAll("h1");
+        title4[3].className="title";
+        title4[3].id="fourth";
+        title4[3].textContent="Fourth Title";
+
+        console.log(title4[3].id)
+        */
+
+        const heads=document.querySelectorAll(".title");
+
+        change_color=(element)=>{
+            element.style.color="green";
+        }
+
+        change_font=(element)=>{
+            element.style.fontSize="35px";
+        }
+
+        changeBackgroundColor=(element)=>{
+            element.style.backgroundColor="blue";
+        }
+
+        change_color(heads[2]);
+        change_font(heads[1]);
+        changeBackgroundColor(heads[0]);
+        
+
+      </script>
+
+    </body>
+  </html>
