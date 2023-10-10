@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+    <h1></h1>
+</head>
+<body>
+    <button id="calc">CLACULATE BMI</button>
+    <br>
+    <button id="B2" onclick="Clicked()">Click Me2</button>
+    <br>
+    <input placeholder="Mass in Kilograms" id="mass" type="text">
+    <br>
+    <input placeholder="Height in metres" id="height" type="text">
+
+    <script>
+
+        const header1=document.querySelector('h1');
+        header1.textContent="WassGood";
+        header1.style.fontSize="45px";
+
+
+        const button=document.querySelector('button');
+        button.addEventListener('click',e=>{
+            console.log("You clicked me");
+            
+            console.log('e.target gives the selected element: ', e.target);
+            console.log(e.target.textContent);
+        })
+
+        //const button2=document.getElementById("B2");
+        const Clicked=()=>{
+            alert("You just clicked the second button by callinga function from the html!!");
+        }
+
+        //BMI CALCULATOR
+        const mass=document.getElementById("mass");
+        const height=document.getElementById("height");
+        const calc=document.getElementById("calc");
+
+        //console.log(mass.value,height.textContent,calc.textContent);
+        button.addEventListener("click",()=>{
+            let bmi=mass.value/height.value**2
+            alert(`Your BMI is ${bmi.toFixed(2)}`)
+        })
+
+    </script>
+    
+</body>
+</html>
