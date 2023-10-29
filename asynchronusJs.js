@@ -2,7 +2,7 @@
 
 const orderPizza=(callback)=>{
     setTimeout(() => {
-        message1="Pizaa Ordered";
+        console.log("Pizaa Ordered");
         message2="Pizza Ready";
         callback(message2);
     }, 3000);
